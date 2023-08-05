@@ -64,5 +64,3 @@ BagRS_MLR<-function(traindata,testdata,sample_rate_col,cycletime){
 }#Constructing a function for BagRS-MLR model
 
 PRE<-BagRS_MLR(traindata=traindata,testdata=testdata,sample_rate_col=0.005,cycletime=500)$final_pre#Predictions on the test set
-
-sample_index_row<-sample(1:nrow(traindata), replace = TRUE)
