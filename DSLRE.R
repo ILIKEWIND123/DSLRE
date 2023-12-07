@@ -1,7 +1,10 @@
 #In your test data, the first column should be the measured yield, column name Y, and the subsequent columns should be the reflectance of the bands at different wavelengths. The column names are the wavelengths
 
+traindata<- read.table("clipboard",header=TRUE,sep='')#Input traindata data
+
 testdata<- read.table("clipboard",header=TRUE,sep='')#Input test data
 
+#Constructing a function for DSLRE model
 DSLRE<-function(traindata,testdata,sample_rate_col,cycletime){
   
   set.seed(10)
@@ -55,6 +58,7 @@ DSLRE<-function(traindata,testdata,sample_rate_col,cycletime){
   results<-list(final_pre=meanp,pre_matrix=pre_matrix,outpre_matrix=outpre_matrix)
   
   return(results)
-}#Constructing a function for BagRS-MLR model
+  
+}
 
-PRE<-DSLRE(traindata=traindata,testdata=testdata,sample_rate_col=0.005,cycletime=500)$final_pre#Predictions on the test set
+PRE<-DSLRE(traindata=traindata,testdata=testdata,sample_rate_col=0.005,cycletime=500)$final_pre #Predictions on the test set
