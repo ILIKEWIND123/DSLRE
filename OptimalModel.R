@@ -8,7 +8,7 @@
 
 testdata<- read.table("clipboard",header=TRUE,sep='')#Input test data
 
-BagRS_MLR<-function(traindata,testdata,sample_rate_col,cycletime){
+DSLRE<-function(traindata,testdata,sample_rate_col,cycletime){
   
   set.seed(10)
   
@@ -63,4 +63,4 @@ BagRS_MLR<-function(traindata,testdata,sample_rate_col,cycletime){
   return(results)
 }#Constructing a function for BagRS-MLR model
 
-PRE<-BagRS_MLR(traindata=traindata,testdata=testdata,sample_rate_col=0.005,cycletime=500)$final_pre#Predictions on the test set
+PRE<-DSLRE(traindata=traindata,testdata=testdata,sample_rate_col=0.005,cycletime=500)$final_pre#Predictions on the test set
