@@ -1,9 +1,3 @@
-# This code already contains the training set data, the user only needs to enter the test data
-
-# Note that to be consistent with the denoised reflectance in our paper
-
-# Please use wheat canopy reflectance data from the grain filling stage
-
 #In your test data, the first column should be the measured yield, column name Y, and the subsequent columns should be the reflectance of the bands at different wavelengths. The column names are the wavelengths
 
 testdata<- read.table("clipboard",header=TRUE,sep='')#Input test data
