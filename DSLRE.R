@@ -5,6 +5,7 @@ traindata<- read.table("clipboard",header=TRUE,sep='')#Input traindata data
 testdata<- read.table("clipboard",header=TRUE,sep='')#Input test data
 
 #Constructing a function for DSLRE model
+
 DSLRE<-function(traindata,testdata,sample_rate_col,cycletime){
   
   set.seed(10)
